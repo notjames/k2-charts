@@ -13,7 +13,11 @@ data:
 {{- if eq .Values.Vault.Backend.Type "consul"}}
     backend "consul" {
       address = "{{.Values.Vault.Backend.Address}}"
-      scheme = "{{.Values.Vault.Backend.Scheme}}"
+  {{- if .Values.Vault.Tls }}
+      scheme = "https"
+  {{- else }}
+      scheme = "http"
+  {{- end }}
       token = "{{.Values.Vault.Backend.Token}}"
     }
 {{- end}}
