@@ -39,6 +39,7 @@ helmConfigs:
             Tls:
               Cert: <Your TLS Cert, base64 encoded>
               Key: <Your TLS Key, base64 encoded>
+              Ca: <Your TLS CA cert, base64 encoded>
 ```
 
 Get [K2](https://github.com/samsung-cnct/k2) to help you deploy a Kubernetes cluster.
@@ -54,7 +55,7 @@ default values below
 ```
 Vault:
   Image: "quay.io/samsung_cnct/vault"
-  ImageTag: "0.5.2"
+  ImageTag: "0.8.3"
   ImagePullPolicy: "Always"
   Component: "vault"
 
